@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Augustine's Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .profile-img {
+            border-radius: 50%;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="profile.png.JPG" alt="A photo of me" class="profile-img">
+
+    <h1 id="my-name">Hi, I'm Augustine</h1>
+    <p>I am 19 years old and I am learning web development.</p>
+
+    <button id="color-btn">Change Background Color</button>
+
+    <section id="contact" style="margin-top: 40px;">
+        <h2>Get in touch</h2>
+        <form action="https://formspree.io/f/mzdldjwl" method="POST" id="contact-form">
+            <input type="text" name="name" id="name-input" placeholder="Your Name" required>
+            <br><br>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <br><br>
+            <textarea name="message" id="message-input" placeholder="Your Message" required></textarea>
+            <br><br>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="response-msg"></p>
+    </section>
+
+    <script>
+            // AI-Style Personalized Greeting
+    const hour = new Date().getHours();
+    let greeting = "Hello!";
+    if (hour < 12) greeting = "Good morning! Welcome to my portfolio.";
+    else if (hour < 18) greeting = "Good afternoon! Thanks for checking out my work.";
+    else greeting = "Good evening! Hope you're having a great day.";
+    
+    alert(greeting + " I am Augustine Okeke.");
+
+    // Button color toggle
+    const colorBtn = document.getElementById("color-btn");
+    let isBlue = false;
+    colorBtn.addEventListener("click", function() {
+        if (isBlue) {
+            document.body.style.backgroundColor = "#f9f9f9";
+            isBlue = false;
+        } else {
+            document.body.style.backgroundColor = "lightblue";
+            isBlue = true;
+        }
+    });
+
+    // Contact form logic
+    const contactForm = document.getElementById("contact-form");
+    contactForm.addEventListener("submit", function(event) {
+        // Formspree handles the submission automatically
+    });
+    </script>
+</body>
+</html>
